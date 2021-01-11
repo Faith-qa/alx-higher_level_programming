@@ -1,0 +1,5 @@
+#!/usr/bin/python3
+class Squares:
+    """A square has equal dimensions"""
+    def __init__(self, size):
+        self.size = size
