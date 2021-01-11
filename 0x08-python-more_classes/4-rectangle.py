@@ -56,6 +56,6 @@ class Rectangle:
                     rect.append("\n")
             return("".join(rect))
 
-    def __rpr__(self):
+    def __repr__(self):
         """return the string representation of a rectangle"""
-        return "Rectangle({:d}, {:d}".format(self.__width, self.__height)
+        return ("Rectangle({:d}, {:d}".format(self.__width, self.__height))
