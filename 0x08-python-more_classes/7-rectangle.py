@@ -53,8 +53,8 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return total
         for i in range(self.__height):
-            total += ("#" * self.__width)
-            if i is not self.__height - 1:
+            total += (str(self.print_symbol) * self.__width)
+            if i != self.__height - 1:
                 total += "\n"
         return total
 
