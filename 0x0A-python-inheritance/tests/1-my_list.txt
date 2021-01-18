@@ -1,0 +1,84 @@
+============
+1-my_list subclass
+==================
+
+usage
+=====
+
+import the function:
+>>> My_list = __import__("1-my_list"). MyList
+
+Test for subclass:
+>>> issubclass(MyList, list)
+True
+
+Test for isinstance:
+>>> my_list = MyList()
+>>> isinstance(my_list, list)
+True
+
+Test empty list:
+>>> my_list = MyList()
+>> my_list
+[]
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+
+if a number of integers are passed through:
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+if all ints are the same:
+>>> my_list = MyList()
+>>> my_list.append(6)
+>>> my_list.append(6)
+>>> my_list.append(6)
+>>> my_list.append(6)
+>>> my_list.append(6)
+>>> my_list.print_sorted()
+[6, 6, 6, 6, 6]
+
+if an argument is passed:
+>>> my_list = MyList()
+>>> my_list.append(6)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(6)
+>>> my_list.append(4)
+my_list.print_sorted(5)
+Traceback (most recent call last):
+	  ...
+TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+if a list is empty:
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+if a list contains negative numbers:
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(-4)
+>>> my_list.append(2)
+>>> my_list.append(-3)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[-4, -3, 1, 2, 5]
+
+if a list is already ordered:
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(4)
+>>> my_list.append(5)
+>>> my_lisy.print_sorted()
+[1, 2, 3, 4, 5]
