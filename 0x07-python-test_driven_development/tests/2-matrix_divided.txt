@@ -1,0 +1,67 @@
+The ''2-matrix_divided' module
+===============================
+
+using ''matrix_divided''
+------------------------
+
+divides all the elements of a matrix in which the matrix and the divider are
+either an integer or float
+the results is rounded to 2 decimal places
+
+>>>matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+when the matrix and the divisor(div) are integers
+>>> matrix = [
+	  [1, 2, 3],
+	  [4, 5, 6]
+	  ]
+>>> matrix_divided(matrix, 3)
+[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]
+
+dividing elements of a float matrix by an integer divisor
+>>> matrix = [
+	   [3.3, 1.2, 1.5],
+	   [4.5, 6.3, 7.5]
+	   ]
+>>> matrix_divided(matrix, 3)
+[1.1, 0.4, 0.5], [1.5, 2.1, 2.5]
+
+dividing elements of a float matrix by a float divisor
+>>> matrix = [
+    	   [1.2, 3.5, 2.2],
+	   [5.4, 7.8, 4.1]
+	   ]
+
+>>> matrix_divided(matrix, 0.2)
+[6.0, 17.5, 11], [27, 39, 20.5]
+
+dividing elements of an integer matrix by a float divisor
+>>> matrix = [
+    	   [4, 3, 2],
+	   [5, 7, 8]
+	   ]
+
+>>> matrix_divided(matrix, 4.2)
+[0.95, 0.71, 0.47], [1.19, 1.67, 1.90]
+
+passing a non-valid statement in matrix
+>>> matrix = [
+    	   ['hello, 2, 3],
+	   [7, 8, 9]
+	   ]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+passing a matrix of different sizes of raw
+>>> matrix = [
+    	   [1, 3, 4]
+	   [1 ]
+	   ]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+
+
+

@@ -1,0 +1,53 @@
+The ''0-add_integer'' module
+=============================
+
+using ''add_integer''
+---------------------
+add_integer adds two integers, if one is a float it is casted to an int
+
+>>>add_integer = __import__('0-add_integer').add_integer
+
+Adding two integers
+>>>add_integer(8, 9)
+17
+
+Adding negative numbers
+>>>add_integer(-1, -2)
+-3
+
+Assing negative and positive numbers
+>>>add_integer(-6, 7)
+1
+
+Adding two floats
+>>>add_integer(5.5, 5.5)
+10
+
+Adding one as a float and the other an integer
+>>>add_integer(9.8, 2)
+11
+>>>add_integer(2, 3.5)
+5
+
+Passing a non valid statement in a, b
+>>>add_integer('Hello', 3)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+Initialize a and b
+>>>add_integer(2)
+100
+
+Pass no argument
+>>>add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+>>>add_integer({1,2,3}, 1)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>>add_integer(1, {1,2,3})
+Traceback (most recent call last):
+TypeError: b must be an integer
+
