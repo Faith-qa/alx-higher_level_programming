@@ -1,37 +1,32 @@
 #!/usr/bin/python3
-"""defining nodes"""
+"""singly linked list"""
 
-
-class node:
-    """defines a node of a single linked list"""
-    def __init__(self, data, next_node=None):
+class Node:
+    """a class that defines a node of a singly linked list"""
+    def __init__(self, data, next_node):
         self.__data = data
-        self.__next_node = next node
-
+        self.__next_node = next_node
     @property
     def data(self):
         return self.__data
 
     @data.setter
-    def data(self, data):
-        if not isinstance(data, int):
-            raise TypeError('data must be an integer')
-        self.__data = data
+    def data(self, value):
+        if not isinstance(value, int):
+            raise TypeError('data must be an int')
+        self.__data = value
 
     @property
     def next_node(self):
         return self.__next_node
 
     @next_node.setter
-    def next_node(self, next_node):
-        if next_node != None or type(next_node) != Node:
-            raise TypeError('next_node must be a Node object')
-        self.__next_node = next_node
+    def next_node(self, value):
+        if not isinstance(value, Node) and vaue != None:
+            raise TypeError('value must be a node object')
 
 class SinglyLinkedList:
-    """defines a singly linked list by private instance attribute"""
-    def __init__(self, head):
-        self.__head = head
-
-        
-        
+    def __init__(self):
+        self.__head = None
+    
+    
