@@ -103,3 +103,16 @@ class Rectangle(Base):
         print('\n' * self.y, end='')
         for i in range(self.height):
             print(' ' * self.x + '#' * self.width)
+
+    def update(self, *args, **kwargs):
+        """
+        update rectangle attributes
+        """
+        expect = (self.id, self.width, self.height, self.x, self.y)
+        if args != ():
+            self.id, self.width, self.height, self.x, self.y,  = \
+                args + expect[len(args):len(expect)]
+
+        elif kwargs:
+            for(name, value) in kwargs.items():
+                setattr(self, name, value)
