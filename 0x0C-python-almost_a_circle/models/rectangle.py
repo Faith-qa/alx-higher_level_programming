@@ -1,62 +1,91 @@
 #!/usr/bin/python3
-"""first rectangle"""
+"""
+This module implements a Rectangle object
+"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """class inherits from Base"""
-    def __init__(self, width, height, x=0, y=0, id=None):
+    """Rectangle implementation
+    """
 
+    def __init__(self, width: int, height: int, x=0, y=0, id=None):
+        """initialization
+        """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+
+    def __str__(self) -> str:
+        """string representation
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}" \
+            .format(self.id, self.x, self.y, self.width, self.height)
+
+    def check_type_value(self, name:  str, value: object, greater_equal=False):
+        """type and value validation
+        """
+
+        if not isinstance(value, int):
+            raise TypeError("{} must be an integer".format(name))
+        if not greater_equal:
+            if value <= 0:
+                raise ValueError("{} must be > 0".format(name))
+        else:
+            if value < 0:
+                raise ValueError("{} must be >= 0".format(name))
 
     @property
     def width(self) -> int:
+        """width getter
+        """
         return self.__width
 
     @width.setter
     def width(self, width: int):
-        if not isinstance(width, int):
-            raise TypeError('width must be int')
-        elif width <= 0:
-            raise ValueError('width must be >0')
+        """width setter
+        """
+        self.check_type_value('width', width)
         self.__width = width
 
     @property
     def height(self) -> int:
+        """height getter
+        """
         return self.__height
 
     @height.setter
     def height(self, height: int):
-        if not isinstance(height, int):
-            raise TypeError('height must be an int')
-        elif height <= 0:
-            raise ValueError('height must be > 0')
+        """height setter
+        """
+        self.check_type_value('height', height)
         self.__height = height
 
     @property
     def x(self) -> int:
+        """x getter
+        """
         return self.__x
 
     @x.setter
     def x(self, x: int):
-        if not isinstance(x, int):
-            raise TypeError('x must be an int')
-        elif x < 0:
-            raise ValueError('x must be >= 0')
+        """x setter
+        """
+        self.check_type_value('x', x, True)
         self.__x = x
 
     @property
     def y(self) -> int:
+        """y getter
+        """
         return self.__y
 
     @y.setter
     def y(self, y: int):
-        if not isinstance(y, int):
-            raise TypeError('y must be an int')
-        elif y < 0:
-            raise ValueError('y must >= 0')
+        """y setter
+        """
+        self.check_type_value('y', y, True)
         self.__y = y
