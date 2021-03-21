@@ -1,2 +1,4 @@
 -- lists privieges of users on server
-SHOW GRANT FOR 'user-0d-1''user_0d_2'@'faith';
+SHOW GRANTS FOR 'user_0d_1'@'localhost';
+SHOW GRANTS FOR 'user_0d_2'@'localhost';
+
