@@ -1,9 +1,6 @@
 #!/usr/bin/node
 
-class Square extends require('./4-rectangle.js') {
-  constructor (size) {
-    super(size, size);
-  }
+class Square extends require('./5-square.js') {
 
   charPrint (c) {
     if (c === undefined) {
