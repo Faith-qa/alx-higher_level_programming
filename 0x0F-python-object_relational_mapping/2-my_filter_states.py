@@ -1,24 +1,25 @@
 #!/usr/bin/python3
-"""List all states from a given db sorted in ascending order by id
-Username, password, and database names are given as user args
 """
-import sys
+Lists all states with name startinf with N
+"""
 import MySQLdb
+from sys import argv
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(user=sys.argv[1],
-                         passwd=sys.argv[2],
-                         db=sys.argv[3],
-                         host='localhost',
-                         port=3306)
-    cur = db.cursor()
-    cur.execute('SELECT *FROM states\
-               WHERE name LIKE BINARY "{}"\
-               ORDER BY states.id ASC;'.format(argv[4]))
-    allStates = cur.fetchall()
 
-    for state in allStates:
-        print(state)
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], db=argv[3])
+
+    cur = db.cursor()
+
+    cur.execute('SELECT *FROM states\
+                WHERE name LIKE BINARY "{}"\
+                ORDER BY states.id ASC;'.format(argv[4]))
+
+    states = cur.fetchall()
+
+    for x in states:
+        print(x)
 
     cur.close()
     db.close()
