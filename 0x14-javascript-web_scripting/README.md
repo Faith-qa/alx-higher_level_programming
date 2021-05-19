@@ -1,1 +1,1 @@
-Javascript webscripting
+Javascript webscraping
